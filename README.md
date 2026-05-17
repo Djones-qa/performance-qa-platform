@@ -1,11 +1,11 @@
 # Performance Engineering Platform — Healthcare Patient Intake
 
 [![CI](https://github.com/Djones-qa/performance-qa-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Djones-qa/performance-qa-platform/actions/workflows/ci.yml)
-[![Security Scan](https://github.com/Djones-qa/performance-qa-platform/actions/workflows/security.yml/badge.svg)](https://github.com/Djones-qa/performance-qa-platform/actions/workflows/security.yml)
 [![Coverage](https://img.shields.io/badge/coverage-80%25%2B-brightgreen)](#test-commands)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Darrius%20Jones-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/darrius-jones-28226b350/)
+[![GitHub](https://img.shields.io/badge/GitHub-Djones--qa-181717?logo=github&logoColor=white)](https://github.com/Djones-qa)
 
 A mock healthcare patient intake form (HTML + Node.js/Express) with a complete performance and validation test strategy. Every test layer maps to a real business or compliance risk.
 
@@ -162,6 +162,7 @@ npm run test:perf         # k6 load test — requires k6 installed + server runn
 **Darrius Jones** — Performance & QA Engineer
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/darrius-jones-28226b350/)
+[![GitHub](https://img.shields.io/badge/GitHub-Djones--qa-181717?logo=github&logoColor=white)](https://github.com/Djones-qa)
 
 Focused on building test strategies that map directly to business risk — not just chasing coverage numbers. This platform demonstrates end-to-end quality engineering across unit, integration, security, performance, and E2E layers in a healthcare compliance context.
 
