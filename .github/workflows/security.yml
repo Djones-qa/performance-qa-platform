@@ -27,10 +27,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run npm audit (high + critical only)
-        # Fail the build on high or critical vulnerabilities
-        # Low/moderate are reported but do not block
+      - name: Run npm audit (high + critical — blocks build)
+        # Now clean at --audit-level=high (0 vulnerabilities).
+        # Fails the build if any high or critical CVE is introduced.
         run: npm audit --audit-level=high
+
+      - name: Report moderate vulnerabilities (informational)
+        run: npm audit --audit-level=moderate || true
 
       - name: Run security test suite
         run: npm run test:security

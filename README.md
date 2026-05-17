@@ -1,6 +1,7 @@
 # Performance Engineering Platform — Healthcare Patient Intake
 
 [![CI](https://github.com/Djones-qa/performance-qa-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/Djones-qa/performance-qa-platform/actions/workflows/ci.yml)
+[![Security](https://img.shields.io/badge/security-CodeQL%20%2B%20npm%20audit-brightgreen?logo=githubactions&logoColor=white)](.github/workflows/security.yml)
 [![Coverage](https://img.shields.io/badge/coverage-80%25%2B-brightgreen)](#test-commands)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
