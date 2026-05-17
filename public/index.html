@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Intake Form — HealthCare Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container" role="main">
+    <header class="form-header">
+      <h1>Patient Intake Form</h1>
+      <p class="subtitle">Please complete all required fields. Your information is protected under HIPAA.</p>
+    </header>
+
+    <div id="alert-banner" class="alert hidden" role="alert" aria-live="polite"></div>
+
+    <form id="intake-form" novalidate aria-label="Patient intake form">
+
+      <!-- ── Personal Information ─────────────────────────────────────── -->
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name <span aria-hidden="true" class="required">*</span></label>
+            <input type="text" id="firstName" name="firstName" required
+                   autocomplete="given-name" maxlength="255"
+                   aria-required="true" aria-describedby="firstName-error" />
+            <span class="field-error" id="firstName-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name <span aria-hidden="true" class="required">*</span></label>
+            <input type="text" id="lastName" name="lastName" required
+                   autocomplete="family-name" maxlength="255"
+                   aria-required="true" aria-describedby="lastName-error" />
+            <span class="field-error" id="lastName-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dateOfBirth">Date of Birth <span aria-hidden="true" class="required">*</span></label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" required
+                   aria-required="true" aria-describedby="dob-error" />
+            <span class="field-error" id="dob-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender <span aria-hidden="true" class="required">*</span></label>
+            <input type="text" id="gender" name="gender" required
+                   placeholder="e.g. Male, Female, Non-binary"
+                   aria-required="true" aria-describedby="gender-error" />
+            <span class="field-error" id="gender-error" role="alert"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ── Contact Information ─────────────────────────────────────── -->
+      <fieldset>
+        <legend>Contact Information</legend>
+
+        <div class="form-group">
+          <label for="email">Email Address <span aria-hidden="true" class="required">*</span></label>
+          <input type="email" id="email" name="email" required
+                 autocomplete="email"
+                 aria-required="true" aria-describedby="email-error" />
+          <span class="field-error" id="email-error" role="alert"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number <span aria-hidden="true" class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required
+                   placeholder="(555) 555-5555"
+                   autocomplete="tel"
+                   aria-required="true" aria-describedby="phone-error" />
+            <span class="field-error" id="phone-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="zipCode">ZIP Code <span aria-hidden="true" class="required">*</span></label>
+            <input type="text" id="zipCode" name="zipCode" required
+                   placeholder="12345" maxlength="10"
+                   aria-required="true" aria-describedby="zip-error" />
+            <span class="field-error" id="zip-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Street Address <span aria-hidden="true" class="required">*</span></label>
+          <input type="text" id="address" name="address" required
+                 autocomplete="street-address" maxlength="255"
+                 aria-required="true" aria-describedby="address-error" />
+          <span class="field-error" id="address-error" role="alert"></span>
+        </div>
+      </fieldset>
+
+      <!-- ── Insurance / Financial ───────────────────────────────────── -->
+      <fieldset>
+        <legend>Insurance Information</legend>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="insuranceProvider">Insurance Provider <span aria-hidden="true" class="required">*</span></label>
+            <select id="insuranceProvider" name="insuranceProvider" required
+                    aria-required="true" aria-describedby="insurance-error">
+              <option value="">-- Select Provider --</option>
+              <option value="BlueCross">BlueCross BlueShield</option>
+              <option value="Aetna">Aetna</option>
+              <option value="Cigna">Cigna</option>
+              <option value="UnitedHealth">UnitedHealth</option>
+              <option value="Humana">Humana</option>
+              <option value="Medicare">Medicare</option>
+              <option value="Medicaid">Medicaid</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="field-error" id="insurance-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="policyNumber">Policy Number <span aria-hidden="true" class="required">*</span></label>
+            <input type="text" id="policyNumber" name="policyNumber" required
+                   placeholder="e.g. ABC-123456" maxlength="20"
+                   aria-required="true" aria-describedby="policy-error" />
+            <span class="field-error" id="policy-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="ssn">Social Security Number (optional)</label>
+          <input type="password" id="ssn" name="ssn"
+                 placeholder="XXX-XX-XXXX" maxlength="11"
+                 autocomplete="off"
+                 aria-describedby="ssn-hint ssn-error" />
+          <span class="field-hint" id="ssn-hint">Format: 123-45-6789. Only last 4 digits are stored.</span>
+          <span class="field-error" id="ssn-error" role="alert"></span>
+        </div>
+      </fieldset>
+
+      <!-- ── Clinical Information ────────────────────────────────────── -->
+      <fieldset>
+        <legend>Clinical Information</legend>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bloodType">Blood Type</label>
+            <select id="bloodType" name="bloodType" aria-describedby="bloodtype-error">
+              <option value="">-- Unknown --</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="Unknown">Unknown</option>
+            </select>
+            <span class="field-error" id="bloodtype-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="referringNPI">Referring Physician NPI</label>
+            <input type="text" id="referringNPI" name="referringNPI"
+                   placeholder="10-digit NPI" maxlength="10"
+                   aria-describedby="npi-error" />
+            <span class="field-error" id="npi-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="allergies">Known Allergies</label>
+          <input type="text" id="allergies" name="allergies"
+                 placeholder="e.g. Penicillin, Latex, Peanuts (comma-separated)"
+                 aria-describedby="allergies-hint" />
+          <span class="field-hint" id="allergies-hint">Separate multiple allergies with commas.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="currentMedications">Current Medications</label>
+          <input type="text" id="currentMedications" name="currentMedications"
+                 placeholder="e.g. Metformin 500mg, Lisinopril 10mg (comma-separated)" />
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="4" maxlength="2000"
+                    placeholder="Any additional information for your care team..."
+                    aria-describedby="notes-counter"></textarea>
+          <span class="field-hint" id="notes-counter">0 / 2000 characters</span>
+        </div>
+      </fieldset>
+
+      <!-- ── Consent ─────────────────────────────────────────────────── -->
+      <fieldset>
+        <legend>Consent &amp; Acknowledgment</legend>
+
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="consentToTreat" name="consentToTreat" required
+                 aria-required="true" aria-describedby="consent-error" />
+          <label for="consentToTreat">
+            I consent to receive medical treatment and authorize the release of information
+            necessary for billing purposes. <span aria-hidden="true" class="required">*</span>
+          </label>
+          <span class="field-error" id="consent-error" role="alert"></span>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="hipaaAcknowledged" name="hipaaAcknowledged" required
+                 aria-required="true" aria-describedby="hipaa-error" />
+          <label for="hipaaAcknowledged">
+            I have received and acknowledge the Notice of Privacy Practices (HIPAA).
+            <span aria-hidden="true" class="required">*</span>
+          </label>
+          <span class="field-error" id="hipaa-error" role="alert"></span>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="reset" class="btn btn-secondary">Clear Form</button>
+        <button type="submit" class="btn btn-primary" id="submit-btn">
+          Submit Intake Form
+        </button>
+      </div>
+
+    </form>
+  </main>
+
+  <script src="form.js"></script>
+</body>
+</html>

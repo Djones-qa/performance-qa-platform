@@ -1,0 +1,8 @@
+node_modules/
+coverage/
+tests/e2e/report/
+tests/performance/results/
+.env
+*.log
+.DS_Store
+Thumbs.db
