@@ -24,6 +24,8 @@
     "xss": "1.0.14"
   },
   "devDependencies": {
+    "@babel/generator": "^7.29.0",
+    "@babel/types": "^7.29.0",
     "@playwright/test": "1.40.1",
     "jest": "29.7.0",
     "nodemon": "3.0.2",
@@ -31,7 +33,11 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testPathPattern": "tests/(unit|integration|security)",
+    "testMatch": [
+      "**/tests/unit/**/*.test.js",
+      "**/tests/integration/**/*.test.js",
+      "**/tests/security/**/*.test.js"
+    ],
     "collectCoverageFrom": [
       "src/**/*.js"
     ],

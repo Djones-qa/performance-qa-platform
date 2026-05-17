@@ -32,7 +32,10 @@ const MAX_NOTES_LENGTH = 2000;
  */
 function sanitize(value) {
   if (typeof value !== 'string') return value;
-  return xss(value.trim());
+  // xss() strips HTML tags; additionally strip javascript: URIs and null bytes
+  return xss(value.trim())
+    .replace(/javascript\s*:/gi, '')
+    .replace(/\x00/g, '');
 }
 
 /**

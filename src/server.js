@@ -74,6 +74,13 @@ app.use((req, res) => {
 // Global error handler — never leak stack traces to client
 // Risk: stack traces expose internal paths and library versions
 app.use((err, req, res, next) => {
+  // Handle payload too large (body-parser limit exceeded)
+  if (err.type === 'entity.too.large' || err.status === 413) {
+    return res.status(413).json({
+      status: 'error',
+      message: 'Request payload too large'
+    });
+  }
   console.error('[ERROR]', err.message);
   res.status(500).json({
     status: 'error',
